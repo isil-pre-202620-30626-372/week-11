@@ -35,3 +35,31 @@ Finalmente, el sistema deberá mostrar la relación de participantes admitidos, 
 El sistema debe permitir registrar participantes, almacenar y actualizar sus puntajes, identificar quiénes cumplen el requisito mínimo, ordenar a los participantes aptos y asignar las vacantes disponibles.
 
 Al finalizar el proceso, debe ser posible consultar la relación de participantes admitidos en orden de mérito, la lista de espera y el estado final de cada inscrito. También se debe mostrar la cantidad de participantes registrados, admitidos, no aptos y en espera.
+
+
+```mermaid
+classDiagram
+
+    class Participant {
+        -int id
+        -String name
+        -String phone
+        -int score
+        -Status status
+    }
+
+
+    class Workshop {
+        -String name
+        -int capacity
+        -int minimumScore
+        -List~Participant~ participants
+
+        +registerParticipant(Participant participant) void
+
+    }
+
+    Workshop o-- Participant
+
+
+```

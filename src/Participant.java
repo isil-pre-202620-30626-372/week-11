@@ -55,8 +55,5 @@ public class Participant {
     public String toString() {
         return "Participant | id: " + id + ", name: " + name;
     }
-
-    
-
     
 }

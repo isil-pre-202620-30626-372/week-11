@@ -2,7 +2,7 @@ public enum Status {
     REGISTERED("Registered"),
     NOT_QUALIFIED("Not qualified"),
     ADMITTED("Admitted"),
-    WAITEDLIST("Wait list");
+    WAITEDLIST("Waited list");
 
     private final String description;
 
@@ -13,5 +13,10 @@ public enum Status {
     public String getDescription() {
         return description;
     }
-   
+    
+    @Override 
+    public String toString() {
+        return description;
+    }
+
 }

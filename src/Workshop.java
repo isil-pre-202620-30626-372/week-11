@@ -60,15 +60,14 @@ public class Workshop {
     }
 
     public void sortPartcipants() {
-        participants.sort(Comparator.comparing(Participant::getScore));
-
+        participants.sort(Comparator.comparing(Participant::getScore).reversed().thenComparing(Participant::getId));
     }
 
     public void assignVacancies() {
         int admitted = 0;
 
-        for (Participant participant: participants) {
-            if (participant.getScore()< minimumScore) {
+        for (Participant participant : participants) {
+            if (participant.getScore() < minimumScore) {
                 participant.setStatus(Status.NOT_QUALIFIED);
                 continue;
             }
@@ -85,9 +84,13 @@ public class Workshop {
     }
 
     public void showParticipants() {
+        System.out.println("Participants in the workshop: " + name);
+
         for (Participant participant : participants) {
             System.out.println(participant);
         }
+
+        System.out.println();
     }
 
 }
